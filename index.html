@@ -12,28 +12,43 @@
 </head>
 <body>
     <div class="wrapper">
-        <div class="heading" style="text-align: center;">
-            <h1>Online-Quest</h1>
-            <h2 style="margin: .5em 0;">Task 1. Rebus</h2>
+        <div class="rules-block">
+            <div class="heading">
+                <h1>Online-Quest</h1>
+                <h2 >Task 1. Rebus</h2>
+            </div>
+            
+            <div class="desc">
+                <h3 class="desc__title">Description & Rules ▼</h3>
+                <div class="desc__text" hidden>
+                    <p class="desc__text__about">
+                        <h4 style="display: inline;">Rebus - </h4>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam corporis totam, 
+                        similique nemo ex itaque odit. Pariatur eaque sapiente doloribus, ratione adipisci 
+                        sit exercitationem hic error, nemo eveniet ducimus nulla.
+                    </p>
+                    <div class="desc__text__list">
+                        <h4>Rules: </h4>
+                        <ul>
+                            <li>Blabla</li>
+                            <li>Blebleble</li>
+                            <li>Blublublu</li>
+                            <li>Ha blublublublu</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <div class="desc">
-            <h3 class="desc__title">Description & Rules ▼</h3>
-            <div class="desc__text" hidden>
-                <p class="desc__text__about">
-                    <h4 style="display: inline; font-size: large;">Rebus - </h4>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam corporis totam, 
-                    similique nemo ex itaque odit. Pariatur eaque sapiente doloribus, ratione adipisci 
-                    sit exercitationem hic error, nemo eveniet ducimus nulla.
-                </p>
-                <div class="desc__text__list">
-                    <h4 style="font-size: large;">Rules: </h4>
-                    <ul>
-                        <li>Blabla</li>
-                        <li>Blebleble</li>
-                        <li>Blublublu</li>
-                        <li>Ha blublublublu</li>
-                    </ul>
+        <div class="test">
+            <div class="progress-container">
+                <p>Task progress:</p>
+                <input type="text" id="test-progress" value="0">
+            </div>
+            <div class="test__rebus-block">
+                <img id="rebus-img">
+                <div class="field">
+                    <input type="text" id="user-rebus-answer" placeholder="Answer...">
+                    <button id="checkAnswerBtn">Go!</button>
                 </div>
             </div>
         </div>

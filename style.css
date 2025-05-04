@@ -6,14 +6,18 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     height: 100vh;
-    /* display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; */
+}
+
+:root {
+    --red: rgb(205, 32, 32);
 }
 
 .wrapper {
     transform: translateY(8vw);
+}
+
+.heading {
+    text-align: center;
 }
 
 .heading h1 {
@@ -22,9 +26,13 @@ body {
     font-size: 2.5rem;
 }
 
+.heading h2 {
+    margin: .5em 0;
+}
+
 h3.desc__title {
     color: white;
-    background-color: rgb(205, 32, 32);
+    background-color: var(--red);
     padding: .3em;
     border-radius: 10px 10px 1px 1px;
     cursor: pointer;
@@ -41,10 +49,61 @@ h3.desc__title {
     border-radius: 0 0 10px 10px;
 }
 
+.desc__text__about h4,
+.desc__text__list h4 {
+    display: inline; 
+    font-size: large;
+}
+
 .desc .desc__text .desc__text__list {
     margin-top: 1em;
 }
 
 .desc .desc__text .desc__text__list ul {
     margin-left: 1.5em;
+}
+
+.test {
+    display: flex;
+}
+
+.test .progress-container {
+    text-align: center;
+}
+
+.test .progress-container p {
+    font-size: 1.2rem;
+}
+
+.test .test__rebus-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+.test .test__rebus-block img {
+    transform: scale(.7);
+    border: solid 2px black;
+    box-shadow: 0 0 30px black;
+}   
+
+.test .test__rebus-block .field {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.test .test__rebus-block .field input {
+    width: 20em;
+    border: solid 2px gray;
+}
+
+.test .test__rebus-block .field button {
+    background-color: var(--red);
+    color: white;
+    border: none;
+    padding: .5em;
 }
