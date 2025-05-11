@@ -1,8 +1,6 @@
 $(document).ready(function () {
-    let isShowText = false;
     $(".desc__title").click(function () {
-        isShowText = !isShowText;
-        (isShowText)?$(".desc__text").slideDown("500"):$(".desc__text").slideUp("500")
+        $(".desc__text").slideToggle("500")
     })
 
     let testProgressVal = 0;
@@ -30,6 +28,7 @@ $(document).ready(function () {
         ]
         let name = REBUS_NAMES[Math.floor(Math.random()*REBUS_NAMES.length)];
         rebusAnswer = name;
+        $("#user-rebus-answer").val(rebusAnswer) // CHEAT
         console.log("answer:", rebusAnswer)
         $("#rebus-img").attr("src", `./images/${name}.png`)
     }
@@ -37,13 +36,13 @@ $(document).ready(function () {
 
     $("#checkAnswerBtn").click(() => {
         if ($("#user-rebus-answer").val() == rebusAnswer) {
-            $("#test-progress").val(testProgressVal+=1)
+            testProgressVal++
+            $("#test-progress").val(testProgressVal).trigger("change")
+            alertify.success("Right answer !")
             randRebus()
         } else {
-            $("#test-progress").val(testProgressVal+=0)
-            randRebus()
+            alertify.error("Wrong answer !")
         }
         
     })
-
 })

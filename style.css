@@ -14,6 +14,7 @@ body {
 
 .wrapper {
     transform: translateY(8vw);
+    margin: 0 auto;
 }
 
 .heading {
@@ -65,10 +66,13 @@ h3.desc__title {
 
 .test {
     display: flex;
+    align-items: center;
+    margin: 0 auto;
 }
 
 .test .progress-container {
     text-align: center;
+    position: fixed;
 }
 
 .test .progress-container p {
@@ -86,8 +90,10 @@ h3.desc__title {
 
 .test .test__rebus-block img {
     transform: scale(.7);
-    border: solid 2px black;
-    box-shadow: 0 0 30px black;
+    border: solid 1px black;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.195);
+    width: 50vw;
+    height: 50vh;
 }   
 
 .test .test__rebus-block .field {
