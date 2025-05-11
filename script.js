@@ -26,10 +26,13 @@ $(document).ready(function () {
             `флешка`,
             `цукерка`,
         ]
+
         let name = REBUS_NAMES[Math.floor(Math.random()*REBUS_NAMES.length)];
         rebusAnswer = name;
+
         $("#user-rebus-answer").val(rebusAnswer) // CHEAT
         console.log("answer:", rebusAnswer)
+        
         $("#rebus-img").attr("src", `./images/${name}.png`)
     }
     randRebus()
@@ -46,3 +49,4 @@ $(document).ready(function () {
         
     })
 })
+
