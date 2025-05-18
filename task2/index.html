@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./Alertify/alertify.min.js"></script>
+    <link rel="stylesheet" href="../Alertify/alertify.core.css">
+    <link rel="stylesheet" href="../Alertify/alertify.default.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+</head>
+<body>
+    <div class="wrapper">
+
+        <div class="rules-block">
+            <div class="heading">
+                <h1>Online-Quest</h1>
+                <h2 >Task 2. Music Quiz</h2>
+            </div>
+            
+            <div class="desc">
+                <h3 class="desc__title">Description & Rules ▼</h3>
+                <div class="desc__text" hidden>
+                    <p class="desc__text__about">
+                        <h4 style="display: inline;">Rebus - </h4>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam corporis totam, 
+                        similique nemo ex itaque odit. Pariatur eaque sapiente doloribus, ratione adipisci 
+                        sit exercitationem hic error, nemo eveniet ducimus nulla.
+                    </p>
+                    <div class="desc__text__list">
+                        <h4>Rules: </h4>
+                        <ul>
+                            <li>Blabla</li>
+                            <li>Blebleble</li>
+                            <li>Blublublu</li>
+                            <li>Ha blublublublu</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <div class="test">
+            <div class="progress-container">
+                <div class="time-progress__container">
+                    <p>Time progress</p>
+                    <input type="text" id="time-progress" value="0">
+                </div>
+                <div class="task-progress__container">
+                    <p>Task progress</p>
+                    <input type="text" id="task-progress" value="0">
+                </div>
+            </div>
+            
+            <div class="test__quiz-block">
+                <button class="start-btn">Start</button>
+                <div class="field">
+                    <input type="text" id="user-rebus-answer" placeholder="Answer...">
+                    <button id="checkAnswerBtn">Go!</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <script src="https://raw.githack.com/aterrien/jQuery-Knob/755309e933d326ffaa5a2d758dc377147b766515/dist/jquery.knob.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
