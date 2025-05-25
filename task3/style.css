@@ -6,6 +6,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     height: 100vh;
+    background: lightgreen;
 }
 
 
@@ -17,7 +18,7 @@ body {
 }
 
 :root {
-    --main: rgb(142, 32, 205);
+    --main: seagreen;
 }
 
 .wrapper {
@@ -101,26 +102,6 @@ h3.desc__title {
     justify-content: center;
     text-align: center;
     margin: 0 auto;
-}
-
-.test .test__quiz-block .field {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 5vh;
-}
-
-.test .test__quiz-block .field input {
-    width: 20em;
-    border: none;
-    box-shadow: 0 .1em 0.5px gray;
-}
-
-.test .test__quiz-block .field button {
-    background-color: var(--main);
-    color: white;
-    border: none;
-    padding: .5em;
 }
 
 .test .test__quiz-block #start-btn {
