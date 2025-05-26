@@ -28,25 +28,4 @@ $(document).ready(function () {
         readOnly: true,
         inputColor: "rgba(0, 0, 0, 0)",
     })
-
-    for (let i = 0; i < 6*4; i++) {
-        
-    }
 })
-
-//casino
-let usrCoins = 0;
-function casic () {
-    let usrrn = Math.floor(Math.random()*20)
-    let usrN = +prompt("u num", usrrn)
-    let maxN = +prompt("max num", 20)
-    let botN = Math.floor(Math.random()*maxN)
-    if (usrN==botN){
-        usrCoins+=20
-    } else { 
-        usrCoins-=5
-    }
-    alert(`U:${usrN}|B:${botN}\nCoins: ${usrCoins}`)
-}
-
-document.addEventListener("keydown",(event)=>{(event.ctrlKey&&event.key=="b")?casic():0})

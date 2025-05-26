@@ -1,137 +1,24 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    height: 100vh;
-}
-
-
-.overlay img {
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    opacity: 0;
-}
-
 :root {
-    --main: rgb(142, 32, 205);
-}
-
-.wrapper {
-    transform: translateY(8vh);
-    margin: 0 auto;
-}
-
-.heading {
-    text-align: center;
-}
-
-.heading h1 {
-    text-decoration: underline;
-    font-style: italic;
-    font-size: 2.5rem;
-}
-
-.heading h2 {
-    margin: .5em 0;
-}
-
-h3.desc__title {
-    color: white;
-    background-color: var(--main);
-    padding: .3em;
-    border-radius: 10px 10px 1px 1px;
-    cursor: pointer;
-}
-
-.desc {
-    width: 50vw;
-    margin: 0 auto;
-}
-
-.desc__text {
-    background-color: lightgray;
-    padding: .8em;
-    border-radius: 0 0 10px 10px;
-}
-
-.desc__text__about h4,
-.desc__text__list h4 {
-    display: inline; 
-    font-size: large;
-}
-
-.desc .desc__text .desc__text__list {
-    margin-top: 1em;
-}
-
-.desc .desc__text .desc__text__list ul {
-    margin-left: 1.5em;
+    --primary: rgb(142, 32, 205);
 }
 
 .test {
-    display: flex;
-    align-items: center;
-    margin: 0 auto;
-    /* height: 50vh; */
-    margin-top: 5vh;
-}
-
-.test .progress-container {
-    text-align: center;
-    position: fixed;
-    float: left;
-}
-
-/* @media all and (max-width: ) {
-    
-} */
-
-.test .progress-container p {
-    font-size: 1.2rem;
-    margin-bottom: .5em;
-}
-
-.test .test__quiz-block {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    margin: 0 auto;
-}
-
-.test .test__quiz-block .field {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 5vh;
+    height: 25vh;
 }
 
 .test .test__quiz-block .field input {
-    width: 20em;
     border: none;
     box-shadow: 0 .1em 0.5px gray;
 }
 
 .test .test__quiz-block .field button {
-    background-color: var(--main);
-    color: white;
-    border: none;
-    padding: .5em;
+    background-color: var(--primary);
 }
 
 .test .test__quiz-block #start-btn {
-    background: var(--main);
-    color: white;
-    font-size: 1.2rem;
-    border: none;
-    padding: .65em;
-    margin: 0 auto;
-    width: 10em;
-    border-radius: 10px;
-    cursor: pointer;
-    display: block;
+    background: var(--primary);
+}
+
+.test .test__quiz-block .next-task__btn {
+    background: var(--primary);
 }

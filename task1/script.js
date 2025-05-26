@@ -15,7 +15,6 @@ $(document).ready(function () {
         angleOffset: -85,
         thickness: 0.3,
         inputColor: "rgba(0, 0, 0, 0)",
-        width: `${window.innerWidth/14}px`
     })
 
     let rebusAnswer;
@@ -36,8 +35,10 @@ $(document).ready(function () {
         let name = REBUS_NAMES[Math.floor(Math.random()*REBUS_NAMES.length)];
         rebusAnswer = name;
 
-        $("#user-rebus-answer").val(rebusAnswer) // Remove
-        // console.log("answer:", rebusAnswer) // remove
+        //---------------Auto Answer------------//
+        $("#user-rebus-answer").val(rebusAnswer)
+        console.log("answer:", rebusAnswer) 
+        //--------------------------------------//
         
         $("#rebus-img").attr("src", `./images/${name}.png`)
     }
@@ -51,7 +52,9 @@ $(document).ready(function () {
                 alertify.success("Right answer !")
                 randRebus()
             } else {
-                $(".test__rebus-block").html("<button class=\"next-task__btn\">Next task →</button>")
+                $(".test__quiz-block").html(
+                    `<button onclick=\"window.location.href='../task2/index.html'\" class=\"next-task__btn\">Next task →</button>`
+                )
             }
         } else {
             testProgressVal--

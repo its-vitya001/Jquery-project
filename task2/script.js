@@ -10,7 +10,7 @@ $(document).ready(function () {
         bgColor: "rgba(0, 0, 0, 0.24)",
         thickness: 0.2,
         min: 0,
-        max: 60,
+        max: 180,
         readOnly: true,
     })
 
@@ -29,27 +29,33 @@ $(document).ready(function () {
 
     let soundAnswer = ""
     function randomSound () {
-        let soundNum = Math.floor(Math.random() * (15 - 1) + 1)
+        const soundAnswers = {
+            1: "Гарри Поттер",
+            2: "Губка Боб", 
+            3: "Пираты Карибского моря",
+            4: "Симпсоны",
+            5: "Имперский марш",
+            6: "Король львов",
+            7: "Холодное сердце",
+            8: "Шрек",
+            9: "Шрек",
+            10: "Rocky",
+            11: "Индиана джонс",
+            12: "Один дома",
+            13: "Терминатор 2",
+            14: "Назад в будущее",
+            15: "Охотники за приведениями"
+        };
 
-        if (soundNum==1){soundAnswer="Гарри Поттер"}
-        if (soundNum==2){soundAnswer="Губка Боб"}
-        if (soundNum==3){soundAnswer="Пираты Карибского моря"}
-        if (soundNum==4){soundAnswer="Симпсоны"}
-        if (soundNum==5){soundAnswer="Имперский марш"}
-        if (soundNum==6){soundAnswer="Король львов"}
-        if (soundNum==7){soundAnswer="Холодное сердце"}
-        if (soundNum==8){soundAnswer="Шрек"}
-        if (soundNum==9){soundAnswer="Шрек"}
-        if (soundNum==10){soundAnswer="Rocky"}
-        if (soundNum==11){soundAnswer="Индиана джонс"}
-        if (soundNum==12){soundAnswer="Один дома"}
-        if (soundNum==13){soundAnswer="Терминатор 2"}
-        if (soundNum==14){soundAnswer="Назад в будущее"}
-        if (soundNum==15){soundAnswer="Охотники за приведениями"}
+        let soundNum = Math.floor(Math.random() * (15 - 1) + 1)
+        soundAnswer = soundAnswers[soundNum] || "Неизвестно";
 
         $("#test-audio").attr("src", `./sound/${soundNum}.mp3`)
+
+        //----------------Auto Answer--------------//
         $("#user-rebus-answer").val(soundAnswer)
-        console.log("Ответ", soundAnswer, soundNum)
+        console.log("Ответ", soundAnswer, soundNum) 
+        //-----------------------------------------//
     }
 
     
@@ -61,7 +67,7 @@ $(document).ready(function () {
         timer = setInterval(() => {
             time++
             $("#time-progress").val(time).trigger("change")
-            if(time==60){
+            if(time==180){
                 clearInterval(timer)
                 $("#time-progress").val(0).trigger("change")
                 $("#task-progress").val(0).trigger("change")
@@ -77,36 +83,22 @@ $(document).ready(function () {
                 randomSound()
                 taskProgress++
                 $("#task-progress").val(taskProgress).trigger("change")
-
-                $("#respect").animate({opacity: 0.1}, 200, () => {  /////
-                    $("#respect").animate({opacity: 0}, 200, ()=>{})/////
-                })                                                  /////
                 alertify.success("Right answer !")
+                if (taskProgress == 15) {
+                    $(".test__quiz-block").html(
+                        `<button onclick=\"window.location.href='../task3/index.html'\" class=\"next-task__btn\">Next task →</button>`
+                    )
+                }
             } else {
-                $("#disrespect").animate({opacity: 0.1}, 200, () => {  /////
-                    $("#disrespect").animate({opacity: 0}, 200, ()=>{})/////
-                })                                                     /////
+                taskProgress--
+                $("#task-progress").val(taskProgress).trigger("change")
                 alertify.error("Wrong answer !")
             }
         } else if ($("#start-btn").css("display") == "block") {
             alertify.error("Test not started !")
         }
     })
+
+    
+
 })
-
-//casino
-let usrCoins = 0;
-function casic () {
-    let usrrn = Math.floor(Math.random()*20)
-    let usrN = +prompt("u num", usrrn)
-    let maxN = +prompt("max num", 20)
-    let botN = Math.floor(Math.random()*maxN)
-    if (usrN==botN){
-        usrCoins+=20
-    } else { 
-        usrCoins-=5
-    }
-    alert(`U:${usrN}|B:${botN}\nCoins: ${usrCoins}`)
-}
-
-document.addEventListener("keydown",(event)=>{(event.ctrlKey&&event.key=="b")?casic():0})
